@@ -37,4 +37,7 @@ dependencies {
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core
+    implementation 'org.tukaani:xz:1.9'
+    implementation("com.squareup.okhttp3:okhttp:4.11.0") // 最新稳定版本
+    implementation("com.squareup.okio:okio:3.6.0")     // 用于流处理，可选
 }

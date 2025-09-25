@@ -60,7 +60,7 @@ public class FridaFragment extends Fragment {
             if (!version.isEmpty()) {
                 viewModel.startFridaServer(version); // 调用 ViewModel 启动
             } else {
-                viewModel.addTip("请输入正确的版本号"); // 通过 ViewModel 添加带时间戳的提示
+                viewModel.addWarning("请输入正确的版本号"); // 通过 ViewModel 添加带时间戳的提示
             }
         });
 
