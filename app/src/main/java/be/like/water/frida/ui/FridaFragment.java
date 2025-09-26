@@ -54,11 +54,23 @@ public class FridaFragment extends Fragment {
         rvLog.setLayoutManager(new LinearLayoutManager(getContext()));
         rvLog.setAdapter(logAdapter);
 
+        // --- 读取保存的版本号 ---
+        String savedVersion = getContext()
+                .getSharedPreferences("frida_prefs", 0)
+                .getString("last_version", "");
+        etVersion.setText(savedVersion);
+
         // 启动按钮点击事件
         btnStart.setOnClickListener(v -> {
             String version = etVersion.getText().toString().trim();
             if (!version.isEmpty()) {
                 viewModel.startFridaServer(version); // 调用 ViewModel 启动
+
+                // --- 保存输入的版本号 ---
+                getContext().getSharedPreferences("frida_prefs", 0)
+                        .edit()
+                        .putString("last_version", version)
+                        .apply();
             } else {
                 viewModel.addWarning("请输入正确的版本号"); // 通过 ViewModel 添加带时间戳的提示
             }
@@ -77,3 +89,4 @@ public class FridaFragment extends Fragment {
         });
     }
 }
+

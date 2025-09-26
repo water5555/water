@@ -9,6 +9,9 @@
     <!-- 如果要写入 /data/local/tmp，设备必须 root，普通权限不够 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
+    <!-- 通知栏 -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
 
     <application
         android:allowBackup="true"
