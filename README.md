@@ -1,4 +1,4 @@
-# Frida Manager for Android
+# Reverse Manager for Android
 
 一个 Android 上的 Frida 管理工具，支持 **下载指定版本的 frida-server、启动/停止 frida-server**，并实时显示日志和下载进度。适合逆向工程、动态分析和调试 Android 应用。
 
